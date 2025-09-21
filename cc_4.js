@@ -68,3 +68,60 @@ let promoPrice = product.price * (1-discount);
 product.promoPrice = promoPrice.toFixed(2);
 
 }
+
+console.log(products);
+
+// Step 4:
+
+let customerType = ["regular", "student", "senior"];
+let extraDiscount = 0;
+if (customerType === "student") {
+    extraDiscount = 0.05;
+  } else if (customerType === "senior") {
+    extraDiscount = 0.07;
+  } else {
+    extraDiscount = 0;
+  }
+
+
+// Step 5:
+
+for (let i = 1; i <= 3; i++) {
+    customerType = ["regular", "student", "senior"][i - 1];
+    extraDiscount = 0;
+    if (customerType === "student") {
+    extraDiscount = 0.05;
+  } else if (customerType === "senior") {
+    extraDiscount = 0.07;
+  } else {
+    extraDiscount = 0;
+  }
+
+
+let subtotal = 0;
+for (let product of products) {
+    if (product.inventory > 0) {
+        subtotal += Number(product.promoPrice);
+        product.inventory--;
+    }
+}
+
+let finalTotal = subtotal * (1 - extraDiscount);
+console.log(`Customer ${i}: $${finalTotal.toFixed(2)}`);
+
+};
+
+const sample = products[0];
+for (const key in sample) {
+  console.log(`${key}: ${sample[key]}`);
+};
+
+// Step 7:
+for (const product of products) {
+    for (const [key, value] of Object.entries(product)) {
+        console.log(`${key}: ${value}`);
+        
+    }
+    
+}
+
