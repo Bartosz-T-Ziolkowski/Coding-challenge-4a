@@ -71,7 +71,7 @@ product.promoPrice = promoPrice.toFixed(2);
 
 console.log(products);
 
-// Step 4:
+// Step 4: Create a variable customerType (e.g., "regular", "student", "senior"). Write an if...else if chain to apply an additional discount:
 
 let customerType = ["regular", "student", "senior"];
 let extraDiscount = 0;
@@ -84,7 +84,7 @@ if (customerType === "student") {
   }
 
 
-// Step 5:
+// Step 5: Use for or while loops to simulate a checkout process for 3 customers.
 
 for (let i = 1; i <= 3; i++) {
     customerType = ["regular", "student", "senior"][i - 1];
@@ -111,12 +111,15 @@ console.log(`Customer ${i}: $${finalTotal.toFixed(2)}`);
 
 };
 
+// Step 6: Use for...in to log each key/value pair for a single product after discounts are applied.
+
 const sample = products[0];
 for (const key in sample) {
   console.log(`${key}: ${sample[key]}`);
 };
 
-// Step 7:
+// Step 7: Use Object.entries() and destructuring to log all product info after inventory is updated.
+
 for (const product of products) {
     for (const [key, value] of Object.entries(product)) {
         console.log(`${key}: ${value}`);
