@@ -75,6 +75,8 @@ console.log(products);
 
 let customerType = ["regular", "student", "senior"];
 let extraDiscount = 0;
+
+customerType = customerType[0]
 if (customerType === "student") {
     extraDiscount = 0.05;
   } else if (customerType === "senior") {
@@ -107,7 +109,7 @@ for (let product of products) {
 }
 
 let finalTotal = subtotal * (1 - extraDiscount);
-console.log(`Customer ${i}: $${finalTotal.toFixed(2)}`);
+console.log(`Customer ${i} (${customerType}): $${finalTotal.toFixed(2)}`);
 
 };
 
